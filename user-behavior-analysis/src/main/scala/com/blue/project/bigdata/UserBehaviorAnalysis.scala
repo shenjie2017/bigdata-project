@@ -97,5 +97,6 @@ object UserBehaviorAnalysis {
       .withColumn("rate",$"buy_cnt"/$"pv_cnt").where($"buy_cnt">=10 && $"buy_cnt"<$"pv_cnt").orderBy($"rate".desc)
     itemPopTop10.show(10)
 
+    sc.stop()
   }
 }
